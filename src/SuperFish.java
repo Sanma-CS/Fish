@@ -2,31 +2,26 @@
  * Created by saury on 04/05/2017.
  */
 
-public class SuperFish {
+public abstract class SuperFish {
     private String name;
     private Shape shape;
     private String move;
-    public static final String VOICE = "guruguru guruguru";
 
-    public void setName(String name) {
+    public SuperFish(String name, Shape shape, String move) {
         this.name = name;
+        this.shape = shape;
+        this.move = move;
     }
+
     public String getName() {
         return name;
     }
-    public void setShape(Shape shape) {
-        this.shape = shape;
+    public Shape getShape() {
+        return shape;
     }
-    public double getShape() {
-        return shape.getArea();
-    }
-    public void setMovement(String move) {
-        this.move = move;
-    }
-    public String getMovement() {
+    public String getMove() {
         return move;
     }
-    public String sound(){
-        return VOICE;
-    }
+
+    public abstract String sound();
 }
